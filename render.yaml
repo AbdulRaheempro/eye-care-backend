@@ -1,0 +1,21 @@
+services:
+  - type: web
+    name: eye-cared-bot-backend
+    env: docker
+    plan: free
+    region: oregon
+    envVars:
+      - key: SUPABASE_URL
+        sync: false
+      - key: SUPABASE_KEY
+        sync: false
+      - key: SUPABASE_SERVICE_ROLE_KEY
+        sync: false
+      - key: JWT_SECRET
+        generateValue: true
+      - key: GROK_API_KEY
+        sync: false
+      - key: OPENROUTER_API_KEY
+        sync: false
+      - key: ALLOWED_ORIGINS
+        value: "http://localhost:3000,https://eye-cared-bot.vercel.app"
